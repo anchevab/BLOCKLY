@@ -1,0 +1,176 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_APDS_9960_RGB_Gesture,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_MATRIX_LED_RGB,CAT_RFID,CAT_MESURE,CAT_POLOLU,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_begin" id="W^nx*SO@rV%xM;SPg(5^" x="237" y="-88">
+    <next>
+      <block type="lp2i_ledRGB_WS2812B_init" id="ml=-)+NxT_.-?+g?9o%d">
+        <field name="NEOPIXEL_NAME">RGB_LED</field>
+        <value name="Pin_LedRGB_init">
+          <shadow type="math_number" id="z03`Yh+0_g4y/:WTq6*D">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="Number_of_Pixels">
+          <shadow type="math_number" id="HLBqSQOJHm^Q^HLhuF[d">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="lp2i_ledRGB_WS2812B_setBrightness" id="j,1Rn:%Nwcie=5EztLq{">
+            <field name="NEOPIXEL_NAME">RGB_LED</field>
+            <value name="Brightness">
+              <shadow type="math_number" id="h3j{DMCSBtBYLK48w.:[">
+                <field name="NUM">65</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="variables_set" id="=ks?jc;8!q~k?RF;NEwn">
+                <field name="VAR">i</field>
+                <value name="VALUE">
+                  <block type="math_number" id="Iaiv:`q`C`eK}3C9ySbY">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_repeat" id="f(p)pA]ub:[XHOJAg^(6">
+                    <field name="TIMES">4</field>
+                    <statement name="DO">
+                      <block type="lp2i_ledRGB_WS2812B_setPixelColor" id=".!p1Dr*,Kl?9o}m[QaR-">
+                        <field name="NEOPIXEL_NAME">RGB_LED</field>
+                        <value name="Red">
+                          <shadow type="math_number" id="i]uEF6UYpc8-L-dkh+#p">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_random_int" id="0E2zG*g*Ym4ce%BsdM3M">
+                            <value name="FROM">
+                              <shadow type="math_number" id="s[84g0zPXmO8@}vv(NHv">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="!^-,54c;NF%jSF$~Ql.n">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="Green">
+                          <shadow type="math_number" id="jcVY2kQ(lQ7G|577ws8.">
+                            <field name="NUM">255</field>
+                          </shadow>
+                          <block type="math_random_int" id="UZzSGRr5R=deJ^9Q)2+t">
+                            <value name="FROM">
+                              <shadow type="math_number" id="2j#Q#hVF`3PJ2,yv/#no">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="u10Vks?`2i29%LT9k:^p">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="Blue">
+                          <shadow type="math_number" id="e1[+L0rr%0rQlhde1o8!">
+                            <field name="NUM">120</field>
+                          </shadow>
+                          <block type="math_random_int" id="7u)Eb;5AuqsWGI81CpIB">
+                            <value name="FROM">
+                              <shadow type="math_number" id="v$lr5i#eBz=Z`#d!.~RO">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                            <value name="TO">
+                              <shadow type="math_number" id="jiPUh.etOm`LfrG-Y#cX">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="Pixel_number">
+                          <shadow type="math_number" id="[:s%*5]J|49%q$pUC%Mk">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="variables_get" id=":y#D-WX+gOuxx`Vppm=E">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="base_delay" id="66o/R95@Gnef(~Sc5@KO">
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="RLu8x@4X-QaU3k9#td7R">
+                                <field name="NUM">100</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="lp2i_ledRGB_WS2812B_setPixelColor" id="H]:KO27=T7(;n(av4mrH">
+                                <field name="NEOPIXEL_NAME">RGB_LED</field>
+                                <value name="Red">
+                                  <shadow type="math_number" id=".NbCdq%WTYIvl`t|(72h">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="Green">
+                                  <shadow type="math_number" id=";vtRn!mpbG1gmHU`BkI,">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="Blue">
+                                  <shadow type="math_number" id="$KICXxX9AOj/G10LWuO)">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="Pixel_number">
+                                  <shadow type="math_number" id=");KfVRf#P3Otxh%v?p|/">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="variables_get" id="$.{lP(h!){._Nz$h!,SO">
+                                    <field name="VAR">i</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="base_delay" id="C+KH~I%b4)FGn5Eru@/I">
+                                    <value name="DELAY_TIME">
+                                      <shadow type="math_number" id="qa_]cj4Qb-XV0yUFzlW]">
+                                        <field name="NUM">100</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="variables_set" id="|`7=(I#8Qrr-@tcp)Jr^">
+                                        <field name="VAR">i</field>
+                                        <value name="VALUE">
+                                          <block type="math_arithmetic" id="jt5|UL:Q|,kQ..4)Xy]G">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="o?g,hHh(w$p0W[$eYI^O">
+                                                <field name="VAR">i</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="pu|U)C`^Iy_t~m@NHB=i">
+                                                <field name="NUM">1</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

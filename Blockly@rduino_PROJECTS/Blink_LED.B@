@@ -1,0 +1,36 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_APDS_9960_RGB_Gesture,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_MATRIX_LED_RGB,CAT_RFID,CAT_MESURE,CAT_POLOLU,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="t9Q?HbGG^ud~E(KmkyaE" x="188" y="88">
+    <statement name="LOOP">
+      <block type="inout_digital_write_validator" id="YEkk2!y#s[A/1g)!6w6d">
+        <field name="PIN">3</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="base_delay" id="/I,?+*_fbH@xmRzAtkoR">
+            <value name="DELAY_TIME">
+              <shadow type="math_number" id="YQ^;{`8f%x]:didl6Q(3">
+                <field name="NUM">1000</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="inout_digital_write_validator" id="ZCbEz}epGE0uJ$`/hq`y">
+                <field name="PIN">3</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="base_delay" id="*tPddj33iKj]ErKrS9ME">
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="E;MA4VHF#lk(E@bO{5T;">
+                        <field name="NUM">1000</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

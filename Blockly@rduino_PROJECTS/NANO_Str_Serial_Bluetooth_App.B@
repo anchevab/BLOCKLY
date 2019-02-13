@@ -1,0 +1,70 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_RFID,CAT_TECHNOZONE,CAT_MESURE,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="o:ErLV^K?2o`,SubCA?{" x="313" y="213">
+    <statement name="DO">
+      <block type="serial_init" id="~^H]g/8C{MpJ_g^{)Eys">
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="soft_init" id=")3|_tT;zzl[a#qYHV]Sd">
+            <field name="SOFTSERIAL_NAME">SoftSerial</field>
+            <field name="SPEED">9600</field>
+            <value name="PIN1">
+              <block type="math_number" id="^xAkDq(Y}/|TLd$_l25n">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+            <value name="PIN2">
+              <block type="math_number" id="eNik-%D[o^A|c!-)^BTy">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="R`]Yf@fIA6u{aGe`Qf.U">
+        <value name="IF0">
+          <block type="soft_available" id="#1/p(B=SDZ{@H?v1mXl=">
+            <field name="SOFTSERIAL_NAME">SoftSerial</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="serial_write" id="!3lmRr-oAX5rTm(n!|{`">
+            <value name="CONTENT">
+              <block type="soft_read" id="o4Z=nt^1EE+yhET~W-n|">
+                <field name="SOFTSERIAL_NAME">SoftSerial</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="Chkw0@dW)0^fCk*J`!L^">
+            <value name="IF0">
+              <block type="serial_available" id="49rI?x.GxI=kD@f@BvE#"></block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="@6)oiA/Bj;/@V;WPpYoF">
+                <field name="VAR">data_Serial</field>
+                <value name="VALUE">
+                  <block type="serial_read" id="[]zg)Utr]e0gwI^,=g|i"></block>
+                </value>
+                <next>
+                  <block type="soft_write" id="hPq)TjgdeIklR/O%$;ky">
+                    <field name="SOFTSERIAL_NAME">SoftSerial</field>
+                    <value name="CONTENT">
+                      <block type="variables_get" id="53,~4,lPVDGJ{A]YmSGS">
+                        <field name="VAR">data_Serial</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

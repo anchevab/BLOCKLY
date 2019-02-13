@@ -1,0 +1,86 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_APDS_9960_RGB_Gesture,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_MATRIX_LED_RGB,CAT_GROVE,CAT_RFID,CAT_MESURE,CAT_POLOLU,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="@b3[e1j^SXH$!iI[fip1" x="388" y="163">
+    <statement name="DO">
+      <block type="serial_init" id="2}{N+^Bka{VM0)sm:4iZ">
+        <field name="SPEED">9600</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="#882O5!JQqisD/Sx^ZQ|">
+        <field name="VAR">Temperature</field>
+        <value name="VALUE">
+          <block type="grove_dht_read" id="*F*(O$oUgL03RcFQ(t(:">
+            <field name="TYPE">C</field>
+            <field name="SENSOR">DHT11</field>
+            <field name="PIN">5</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="J[s)1.tHcI}9-$S2M$lF">
+            <field name="VAR">Humidity</field>
+            <value name="VALUE">
+              <block type="grove_dht_read" id="``dN9,Qnx,Li41~eZr@O">
+                <field name="TYPE">h</field>
+                <field name="SENSOR">DHT11</field>
+                <field name="PIN">5</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_print" id="n)!zt{*IWf*/ZZ]eQJ/v">
+                <value name="CONTENT">
+                  <shadow type="text" id="oTL}pR,K1q;NKxaiTfu;">
+                    <field name="TEXT">Temperature: </field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="serial_print_tab" id="Qc8ia?3/4K+8z0}7:*)0">
+                    <value name="CONTENT">
+                      <shadow type="text" id="PvFkj9mvjlYe{@t5-/SJ">
+                        <field name="TEXT"></field>
+                      </shadow>
+                      <block type="variables_get" id="tqXaD_$#DgqNE39nte;3">
+                        <field name="VAR">Temperature</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_print" id="or4UMT.gu_p%njrnbDck">
+                        <value name="CONTENT">
+                          <shadow type="text" id="#R(nb@93r.}170+QjfP/">
+                            <field name="TEXT">Humidity: </field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="serial_println" id="Jo0HF4rwRW~Nv;zdQ=eI">
+                            <value name="CONTENT">
+                              <shadow type="text" id="Fa/c1.z}%E8hsgJK8+sE">
+                                <field name="TEXT"></field>
+                              </shadow>
+                              <block type="variables_get" id="jath)jZMbUH##=~[y:Ql">
+                                <field name="VAR">Humidity</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="base_delay" id="GT+7NQzk7)lOO`Hp$d,1">
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id=",yrjBi[0T[IZ5.yFq=y`">
+                                    <field name="NUM">1000</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

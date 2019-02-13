@@ -1,0 +1,153 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_NRF24L01,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_ROBOTS_MOTORS</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="88a`cn12=}hQaibnObV:" x="263" y="-37">
+    <statement name="DO">
+      <block type="variables_const" id="ppaCTaOXk3KM0oBs+3P^">
+        <field name="VAR">LED_R</field>
+        <value name="VALUE">
+          <block type="math_number" id="Da1]077Bvp|p=?+Wos8$">
+            <field name="NUM">19</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_const" id="S?z9C?N);=)0-x/L825o">
+            <field name="VAR">LED_G</field>
+            <value name="VALUE">
+              <block type="math_number" id="{-(d~EUyr$*vW,N#r;2m">
+                <field name="NUM">16</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_const" id="pyp%$CPOR~5p?*Rs+*Uc">
+                <field name="VAR">LED_B</field>
+                <value name="VALUE">
+                  <block type="math_number" id="@z.u2%N8Bk|-2oHkl/QG">
+                    <field name="NUM">17</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="grove_led" id="RCfdb@+H+mwC_x-~yj)C">
+        <field name="STAT">HIGH</field>
+        <value name="PIN">
+          <block type="variables_get" id="7J^9W+5U/#85cDj#1zxA">
+            <field name="VAR">LED_R</field>
+          </block>
+        </value>
+        <next>
+          <block type="grove_led" id="8GVKA1hlH3M*9k,2}+-c">
+            <field name="STAT">LOW</field>
+            <value name="PIN">
+              <block type="variables_get" id="VCQ1=Yh|wwL:gd;WK|+q">
+                <field name="VAR">LED_G</field>
+              </block>
+            </value>
+            <next>
+              <block type="grove_led" id="eR8=UV@z9R$5~_,F)kti">
+                <field name="STAT">LOW</field>
+                <value name="PIN">
+                  <block type="variables_get" id="cl2?LH}{Lkr:Kg[pq#E(">
+                    <field name="VAR">LED_B</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="base_delay" id="fr?a!:+f{CZ|dEA[Sypa">
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="9aoM8OCUEcLPae+6UP8k">
+                        <field name="NUM">100</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="grove_led" id="_rkZv{*LZJu~h};)|=4Z">
+                        <field name="STAT">LOW</field>
+                        <value name="PIN">
+                          <block type="variables_get" id="1G1.X+{Bl;{!9X6;))qK">
+                            <field name="VAR">LED_R</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="grove_led" id="5yyI592U#chg.n/ghWNJ">
+                            <field name="STAT">HIGH</field>
+                            <value name="PIN">
+                              <block type="variables_get" id="PjVIA^KGK*4Fpq?}XSf@">
+                                <field name="VAR">LED_G</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="grove_led" id="=F2yQF^bb]Yn$u86T=/`">
+                                <field name="STAT">LOW</field>
+                                <value name="PIN">
+                                  <block type="variables_get" id="K5}_`#WXAUP;8_-m=vXf">
+                                    <field name="VAR">LED_B</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="base_delay" id="sCz@35?j7~Edz[aD?-:~">
+                                    <value name="DELAY_TIME">
+                                      <shadow type="math_number" id="VOKr}8[Hdi*sLL{Z_j=$">
+                                        <field name="NUM">100</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="grove_led" id="?+yh%`@}4mf,lLe^6CdJ">
+                                        <field name="STAT">LOW</field>
+                                        <value name="PIN">
+                                          <block type="variables_get" id="nGiu@XP023R^N/ZF]!:}">
+                                            <field name="VAR">LED_R</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="grove_led" id="c^Kb)y.|-)@n`852#2Go">
+                                            <field name="STAT">LOW</field>
+                                            <value name="PIN">
+                                              <block type="variables_get" id="#lWf9/P)-xNC/TM~cO{-">
+                                                <field name="VAR">LED_G</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="grove_led" id="06Z(6%n.d_7^%p0@,fK.">
+                                                <field name="STAT">HIGH</field>
+                                                <value name="PIN">
+                                                  <block type="variables_get" id="y`=:p]68xAC=4n3flD,p">
+                                                    <field name="VAR">LED_B</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="base_delay" id="%+~x*l{QYM=4-8]!UU~(">
+                                                    <value name="DELAY_TIME">
+                                                      <shadow type="math_number" id="+jG;(tZh-pQww^*JL-)t">
+                                                        <field name="NUM">100</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

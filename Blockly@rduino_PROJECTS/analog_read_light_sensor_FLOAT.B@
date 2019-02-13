@@ -1,0 +1,55 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_APDS_9960_RGB_Gesture,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_MATRIX_LED_RGB,CAT_GROVE,CAT_RFID,CAT_MESURE,CAT_POLOLU,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="tuRCo)#QkFr==[7SEKmf" x="288" y="138">
+    <statement name="DO">
+      <block type="serial_init" id="!LYjy(:H}_#dGlW,1+pc">
+        <field name="SPEED">9600</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="~Kcx2BT=p*Vb%{M-]D3:">
+        <field name="VAR">light</field>
+        <value name="VALUE">
+          <block type="conversion_tofloat" id="M8=Hg_Tj8ZNW1_{O=09@">
+            <value name="NAME">
+              <block type="grove_ldr" id="p6u^@$N-.7g+JoYW%~5|">
+                <field name="PIN">A0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_print" id="0ZT2%Ai]m)%#J]FzViGQ">
+            <value name="CONTENT">
+              <shadow type="text" id="B7MqYS4ij`Ulf|Kg7EZT">
+                <field name="TEXT">The light is: </field>
+              </shadow>
+            </value>
+            <next>
+              <block type="serial_println" id="|_2#rJb+~05Hme_P]aDK">
+                <value name="CONTENT">
+                  <shadow type="text" id="Dso.a{N0/tx[t#Dil3Aq">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="variables_get" id="F]wxsA#TYl-Bt[;{rUy9">
+                    <field name="VAR">light</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="base_delay" id="tLwZ.1,ty+KHWIe=g:KH">
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="fN2p5.QNTFIsel~-DWH^">
+                        <field name="NUM">50</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

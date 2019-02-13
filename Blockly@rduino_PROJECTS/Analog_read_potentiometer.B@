@@ -1,0 +1,51 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_RFID,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="jba+ip:EDYLT]rypHuT)" x="437" y="213">
+    <statement name="DO">
+      <block type="serial_init" id="1jHG-}hKoFAqeeGcxn}S">
+        <field name="SPEED">9600</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="u8Iq_+F%#VaM1|MjIQki">
+        <field name="VAR">potentiometer</field>
+        <value name="VALUE">
+          <block type="grove_rotary_angle" id="5HViVVdEp{Mj{=.ujS(o">
+            <field name="PIN">A0</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_print" id="pha)eNYI![BQcF*)Vxi#">
+            <value name="CONTENT">
+              <shadow type="text" id="mibC:|Vcww)$#Pw0~aj@">
+                <field name="TEXT">Potentiometer value is: </field>
+              </shadow>
+            </value>
+            <next>
+              <block type="serial_println" id="Jhuc,Boo:2Hj0BGjA4]]">
+                <value name="CONTENT">
+                  <shadow type="text" id="|2LNN38ul_sph7SCRB*d">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="variables_get" id="a5sa#$HhM|PZQ/G9}bVD">
+                    <field name="VAR">potentiometer</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="base_delay" id="gu1xAKa}#2DV*LT?_7:O">
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="6lL5-{d4`~a/Q,OO#R=m">
+                        <field name="NUM">20</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

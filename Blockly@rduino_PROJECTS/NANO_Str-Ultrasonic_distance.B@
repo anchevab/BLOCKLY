@@ -1,0 +1,51 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_I2C,CAT_NRF24L01,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_TECHNOZONE,CAT_ROBOTS_MOTORS</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="uH`(LSU|//5.MdnKh%e[" x="413" y="137">
+    <statement name="DO">
+      <block type="serial_init" id=":;iAXZWj;[aDNRZ)]JmP">
+        <field name="SPEED">9600</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id=":.4wO.Q{5lx/}oz%nG+=">
+        <field name="VAR">Distance</field>
+        <value name="VALUE">
+          <block type="technozone_sonar1" id="k._:h6@{!CS0y(QE;j$-">
+            <value name="TRIGER">
+              <block type="math_number" id="Zjw.d2!51rlmgL}8oTI}">
+                <field name="NUM">7</field>
+              </block>
+            </value>
+            <value name="DIST">
+              <block type="math_number" id="s@*N]1JtPFCSnE@GjEy?">
+                <field name="NUM">6</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_println" id="$`+~Q;FCi+oGxGddwczb">
+            <value name="CONTENT">
+              <shadow type="text" id="?SCfqJ/J^S.^]?|%7tMV">
+                <field name="TEXT"></field>
+              </shadow>
+              <block type="variables_get" id="OaBvb;mE$vz%eNH2eck!">
+                <field name="VAR">Distance</field>
+              </block>
+            </value>
+            <next>
+              <block type="base_delay" id="fgfEk#YkMvVu8}pMm6C/">
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id=";Em1`d9iY:6T#|~|xCP`">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

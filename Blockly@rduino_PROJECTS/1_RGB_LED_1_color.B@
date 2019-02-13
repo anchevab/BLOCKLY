@@ -1,0 +1,65 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_APDS_9960_RGB_Gesture,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_MATRIX_LED_RGB,CAT_GROVE,CAT_MULTIFUNCTION,CAT_RFID,CAT_MESURE,CAT_POLOLU,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_begin" id="W^nx*SO@rV%xM;SPg(5^" x="213" y="-37">
+    <next>
+      <block type="lp2i_ledRGB_WS2812B_init" id="rtj8I#1$qi]nZ(yg3D|#">
+        <field name="NEOPIXEL_NAME">RGB_LED</field>
+        <value name="Pin_LedRGB_init">
+          <shadow type="math_number" id="aL_qTtE3Ewn4:#WTZ)xQ">
+            <field name="NUM">4</field>
+          </shadow>
+        </value>
+        <value name="Number_of_Pixels">
+          <shadow type="math_number" id="+}WEJX%oC1y`!6B_,,ZS">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="lp2i_ledRGB_WS2812B_setBrightness" id="#J+-q:!n+`#aVp)).DJx">
+            <field name="NEOPIXEL_NAME">RGB_LED</field>
+            <value name="Brightness">
+              <shadow type="math_number" id="y3l2MPf?,M2{Wadd4u,-">
+                <field name="NUM">250</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="lp2i_ledRGB_WS2812B_setPixelColor" id="/c^/_SoleZ?u9T;Qi[uE">
+                <field name="NEOPIXEL_NAME">RGB_LED</field>
+                <value name="Red">
+                  <shadow type="math_number" id="Gym?1SNDGi9OH9%M^[50">
+                    <field name="NUM">255</field>
+                  </shadow>
+                </value>
+                <value name="Green">
+                  <shadow type="math_number" id="_J.?pQ?V|,!2I{RVO=4H">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="Blue">
+                  <shadow type="math_number" id="YH3!T%j5gbJ@]}xr(CV[">
+                    <field name="NUM">120</field>
+                  </shadow>
+                </value>
+                <value name="Pixel_number">
+                  <shadow type="math_number" id="jla*+j8z/VA4-tOkrYX/">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="base_delay" id="A/]fF7(C#a/!mo]XgYor">
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="f!=,waa8o`)PjTleQ**w">
+                        <field name="NUM">70</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

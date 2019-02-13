@@ -1,0 +1,56 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_I2C,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_ROBOTS_MOTORS,CAT_ARDUINO_SERVO,CAT_SHARP,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="L.]Ad)3a)x)tiFS89?@j" x="263" y="213">
+    <statement name="DO">
+      <block type="lp2i_ledRGB_WS2812B_init" id="=6H!6y5lIshgC#+K00u*">
+        <field name="NEOPIXEL_NAME">RGB_LED</field>
+        <value name="Pin_LedRGB_init">
+          <shadow type="math_number" id="4#ti|Xn4pi1Cq=AC}^lF">
+            <field name="NUM">7</field>
+          </shadow>
+        </value>
+        <value name="Number_of_Pixels">
+          <shadow type="math_number" id="g.yq,K;P};bte:dEy,Ft">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="lp2i_ledRGB_WS2812B_setBrightness" id="EtHyr*Y*icz6}Q#-vtgn">
+            <field name="NEOPIXEL_NAME">RGB_LED</field>
+            <value name="Brightness">
+              <shadow type="math_number" id="yvZ6y~yRl-jFEK7WJLxL">
+                <field name="NUM">70</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="lp2i_ledRGB_WS2812B_setPixelColor" id="^z(fj(01lokQ/$osI_SG">
+        <field name="NEOPIXEL_NAME">RGB_LED</field>
+        <value name="Red">
+          <shadow type="math_number" id="EF|HKNnVYn-!z08j|9U}">
+            <field name="NUM">150</field>
+          </shadow>
+        </value>
+        <value name="Green">
+          <shadow type="math_number" id="b1oKq}01}M;[-L|HHagg">
+            <field name="NUM">150</field>
+          </shadow>
+        </value>
+        <value name="Blue">
+          <shadow type="math_number" id="2eK}F{]{t{jlLX/W/m9[">
+            <field name="NUM">70</field>
+          </shadow>
+        </value>
+        <value name="Pixel_number">
+          <shadow type="math_number" id="?_@4~w`IQS8%Vil]bE$s">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

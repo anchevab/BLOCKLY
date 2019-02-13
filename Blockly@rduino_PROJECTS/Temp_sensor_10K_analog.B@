@@ -1,0 +1,42 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_I2C,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_ROBOTS_MOTORS,CAT_ARDUINO_SERVO,CAT_SHARP,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="%c`F(+]z}3L;4o-I,NeL" x="313" y="262">
+    <statement name="DO">
+      <block type="serial_init" id="88jH%~c-b!;_b)zxEMv,">
+        <field name="SPEED">9600</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="|4@{`ZK`ValHwOU~l)R)">
+        <field name="VAR">temperature</field>
+        <value name="VALUE">
+          <block type="grove_temporature_sensor" id="ZMJCbsE}fsJO3dRE5+FY">
+            <field name="PIN">A0</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_println" id="/zaAuZqBBfGh8^kp(=]X">
+            <value name="CONTENT">
+              <shadow type="text" id="w_dU-(k#9sN(:K9t7Pvj">
+                <field name="TEXT"></field>
+              </shadow>
+              <block type="variables_get" id="Dtr+2ghlzYV/gM:%OUMQ">
+                <field name="VAR">temperature</field>
+              </block>
+            </value>
+            <next>
+              <block type="base_delay" id="L,Y@xo:7m$rxPovl%eAb">
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="5HRr%V`x55=3Eevm,$[S">
+                    <field name="NUM">20</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

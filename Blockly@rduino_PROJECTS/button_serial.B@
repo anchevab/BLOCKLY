@@ -1,0 +1,42 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_I2C,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_ROBOTS_MOTORS,CAT_ARDUINO_SERVO,CAT_SHARP,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="=5IXskb9wf1h$UTN~*B~" x="313" y="288">
+    <statement name="DO">
+      <block type="serial_init" id="9h:Y`6ByQgfTnO0={FA@">
+        <field name="SPEED">9600</field>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="variables_set" id="fZ$,PEvljq=5i!/C*zz*">
+        <field name="VAR">button</field>
+        <value name="VALUE">
+          <block type="grove_button" id="DL1;r|cyj,SZ:3R{4XtT">
+            <field name="PIN">6</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_println" id="uyUAL1BlYjmNRTyCMCn$">
+            <value name="CONTENT">
+              <shadow type="text" id="H1t)%DGt8O1YP+z9Xsmb">
+                <field name="TEXT"></field>
+              </shadow>
+              <block type="variables_get" id="7kT/vPwu$_5y^$,SD0V#">
+                <field name="VAR">button</field>
+              </block>
+            </value>
+            <next>
+              <block type="base_delay" id="eby@q^]|iuXn:c*yy7GX">
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="6OKeJAb=NN|[=aetDtNi">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

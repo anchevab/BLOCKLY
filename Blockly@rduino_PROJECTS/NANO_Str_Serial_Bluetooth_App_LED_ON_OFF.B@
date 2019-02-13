@@ -1,0 +1,110 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_GROVE,CAT_RFID,CAT_TECHNOZONE,CAT_MESURE,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_setup_loop" id="o:ErLV^K?2o`,SubCA?{" x="388" y="138">
+    <statement name="DO">
+      <block type="serial_init" id="~^H]g/8C{MpJ_g^{)Eys">
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="soft_init" id=")3|_tT;zzl[a#qYHV]Sd">
+            <field name="SOFTSERIAL_NAME">SoftSerial</field>
+            <field name="SPEED">9600</field>
+            <value name="PIN1">
+              <block type="math_number" id="^xAkDq(Y}/|TLd$_l25n">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+            <value name="PIN2">
+              <block type="math_number" id="eNik-%D[o^A|c!-)^BTy">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_if" id="R`]Yf@fIA6u{aGe`Qf.U">
+        <value name="IF0">
+          <block type="soft_available" id="#1/p(B=SDZ{@H?v1mXl=">
+            <field name="SOFTSERIAL_NAME">SoftSerial</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="6*OLjP/RtOuwxn?j}0%s">
+            <field name="VAR">dataBT</field>
+            <value name="VALUE">
+              <block type="variables_set_type" id="7iisWu+)_TnS$gJR`EY?">
+                <field name="VARIABLE_SETTYPE_TYPE">CHARACTER</field>
+                <value name="VARIABLE_SETTYPE_INPUT">
+                  <block type="soft_read" id="o4Z=nt^1EE+yhET~W-n|">
+                    <field name="SOFTSERIAL_NAME">SoftSerial</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="3^gdEp4$=`_3a;oB+Lg=">
+                <value name="IF0">
+                  <block type="logic_compare" id="to1Wnr(|hNo5pv{uQm5R">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="#i(:wS814tkv/F_$K{?%">
+                        <field name="VAR">dataBT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="text_char" id="zJH?/9_tAwtS(%jM7w7$">
+                        <field name="TEXT">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="inout_digital_write_validator" id="+)peIW@D$V!L*zpzCh7]">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="=vhv$nw)_UGA$MMd8`X/">
+                    <value name="IF0">
+                      <block type="logic_compare" id="GDzH:5$t;D[v7AI]wsWw">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="[aHu9{dLi6im)k(LP+N/">
+                            <field name="VAR">dataBT</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text_char" id="TgKW#gnS}s%qu=~P}`Vj">
+                            <field name="TEXT">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="inout_digital_write_validator" id="%A}Z|dxxi[Nv;Ak|GUN,">
+                        <field name="PIN">5</field>
+                        <field name="STAT">LOW</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="serial_write" id="R;l]CKZ1}*kTaFWA,fNT">
+                        <value name="CONTENT">
+                          <block type="variables_get" id="Axp;yi7mdKsWSGi4R8_p">
+                            <field name="VAR">dataBT</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

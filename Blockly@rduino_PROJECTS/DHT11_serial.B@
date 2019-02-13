@@ -1,0 +1,86 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_BLUETOOTH_MISC,CAT_I2C,CAT_SPI,CAT_NRF24L01,CAT_APDS_9960_RGB_Gesture,CAT_OLED_U8G,CAT_LED_RGB_CHAIN,CAT_MATRIX_LED_RGB,CAT_GROVE,CAT_MULTIFUNCTION,CAT_RFID,CAT_MESURE,CAT_POLOLU,CAT_ROBOTS_MOTORS,CAT_STEPPER,CAT_ARDUINO_SERVO,CAT_ETHERNET</toolboxcategories>
+  <toolbox>toolbox_arduino_all</toolbox>
+  <block type="base_begin" id="W^nx*SO@rV%xM;SPg(5^" x="213" y="-37">
+    <next>
+      <block type="serial_init" id="30FiYpQcQU?|Up31Bp)+">
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="variables_set" id="8j0}rvPy0MEYJvMd=|ow">
+            <field name="VAR">temp</field>
+            <value name="VALUE">
+              <block type="grove_dht_read" id="t-c_oysT*?=_XA9Ze(da">
+                <field name="TYPE">C</field>
+                <field name="SENSOR">DHT11</field>
+                <field name="PIN">5</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="^.*J.:}[J`hpMxA;4#_C">
+                <field name="VAR">hum</field>
+                <value name="VALUE">
+                  <block type="grove_dht_read" id="6,^=:G#fTG]HSV#iz!sI">
+                    <field name="TYPE">h</field>
+                    <field name="SENSOR">DHT11</field>
+                    <field name="PIN">5</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_print" id="`)C#{^3x)i?|g785P{OF">
+                    <value name="CONTENT">
+                      <shadow type="text" id="8ZG[qE)2}e(RA1*7(92}">
+                        <field name="TEXT">Temperatura: </field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="serial_print_tab" id="C;R1WsD|=[`et3GsdaP7">
+                        <value name="CONTENT">
+                          <shadow type="text" id="|}(y1C9GVq3Y2EXp=)0s">
+                            <field name="TEXT">Humidity: </field>
+                          </shadow>
+                          <block type="variables_get" id="].}cg{oJFluF$ULT{H:i">
+                            <field name="VAR">temp</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_print" id="rY_+$!!Xq[]TmQ@._NlN">
+                            <value name="CONTENT">
+                              <shadow type="text" id="j}3rA%v5brZyrX~;y1H=">
+                                <field name="TEXT">Humidity: </field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="serial_println" id="=B~pvUfX%!fKJ4Zq;q:J">
+                                <value name="CONTENT">
+                                  <shadow type="text" id="nA=i?7S{U7qde`3~[sB)">
+                                    <field name="TEXT"></field>
+                                  </shadow>
+                                  <block type="variables_get" id="HhvRR;SGHQCeuF2Ii1)%">
+                                    <field name="VAR">hum</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="base_delay" id="!(BX*dv}zGybPu4jHl1}">
+                                    <value name="DELAY_TIME">
+                                      <shadow type="math_number" id="NfebuXsy(9x,n/;Kh.y1">
+                                        <field name="NUM">1000</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
